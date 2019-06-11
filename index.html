@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Train Scheduler</title>
+</head>
+<body>
+<div class="container">
+   <!-- Heading/Jumbotron --> 
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Train Scheduler</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Train Data Table -->
+    <div class="row">
+        <div class="col-md-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    <!-- <tr>
+                        <td id="displayName"></td>
+                        <td id="displayDestination"></td>
+                        <td id="displayFrequency"></td>
+                        <td id="displayArrival"></td>
+                        <td id="displayMinutes"></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- User Input Form -->
+    <div class="row">
+        <div class="col-md-12">
+                <form>
+                    <span>Train Name</span><br />
+                    <input type="text" id="input-name" placeholder=""><br />
+                    <span>Destination</span><br />
+                    <input type="text" id="input-destination" placeholder=""><br />
+                    <span>First Train Time</span><br />
+                    <input type="text" id="input-time" placeholder=""><br />
+                    <span>Frequency (min)</span><br />
+                    <input type="text" id="input-frequency" placeholder=""><br />
+                    <input type="button" id="click-button" value="Submit"><br />
+                </form>
+        </div>
+    </div>
+</div>
+    
+
+
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Firebase Core JavaScript Link -->
+  <script src="https://www.gstatic.com/firebase/6.1.1/firebase-app.js"></script>
+  <!-- Specific Firebase products we want (Database) -->
+  <script src="https://www.gstatic.com/firebase/6.1.1/firebase-database.js"></script>
+  <!-- Script -->
+  <script src="assets/javascript/app.js"></script>
+</body>
+</html>
