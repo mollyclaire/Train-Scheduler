@@ -20,6 +20,7 @@ var destination = "";
 var time = "";
 var frequency = "";
 
+
 // Click Button changes what is stored in Firebase
 $("#click-button").on("click", function(event) {
     // Prevent the page from refreshing
@@ -37,7 +38,8 @@ $("#click-button").on("click", function(event) {
         name: name,
         destination: destination,
         time: time,
-        frequency: frequency
+        frequency: frequency,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
     });
 
@@ -58,6 +60,11 @@ database.ref().on("child_added", function(childSnapshot) {
     )
     $("#table").append(newRow);
    
+    // Calculates the "Next Arrival" 
+        // Current time
+        var now = moment().format("HH:mm");
+        console.log(now);
 
+    // Calculates "Minutes Away" ("Next Arrival" - the current time)
 
 })

@@ -21,10 +21,27 @@ table th, table td{
     text-align: left;
 }
 
+table th {
+    text-align: center;
+    font-weight: normal;
+}
+
 input {
     width: 100%;
 }
 
 #click-button {
     width: 25%;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+i {
+    padding: 20px
+}
+
+h1 {
+    font-weight: bold !important;
 }

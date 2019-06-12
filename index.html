@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Train Scheduler</title>
@@ -15,9 +16,9 @@
    <!-- Heading/Jumbotron --> 
     <div class="row">
         <div class="col-md-12">
-            <div class="jumbotron jumbotron-fluid">
+            <div class="jumbotron jumbotron-fluid bg-warning text-dark">
                 <div class="container">
-                    <h1 class="display-4">Train Scheduler</h1>
+                    <h1 class="display-4 text-center"><i class="fas fa-subway"></i>Train Scheduler</h1>
                 </div>
             </div>
         </div>
@@ -26,8 +27,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Current Train Schedule
+                <div class="card-header bg-secondary text-white">
+                    <strong>Current Train Schedule</strong>
                 </div>
                 <div class="card-body">
                     <table>
@@ -58,8 +59,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    New Member Sign-Up
+                <div class="card-header bg-secondary text-white">
+                    <strong>Add Train</strong>
                 </div>
                 <div class="card-body">
                     <form>
@@ -84,7 +85,8 @@
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <!-- Link to Moment.js -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <!-- Firebase Core JavaScript Link -->
   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
   <!-- Specific Firebase products we want (Database) -->
