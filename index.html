@@ -25,42 +25,56 @@
     <!-- Train Data Table -->
     <div class="row">
         <div class="col-md-12">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Train Name</th>
-                        <th>Destination</th>
-                        <th>Frequency</th>
-                        <th>Next Arrival</th>
-                        <th>Minutes Away</th>
-                    </tr>
-                </thead>
-                <tbody id="table">
-                    <!-- <tr>
-                        <td id="displayName"></td>
-                        <td id="displayDestination"></td>
-                        <td id="displayFrequency"></td>
-                        <td id="displayArrival"></td>
-                        <td id="displayMinutes"></td>
-                    </tr> -->
-                </tbody>
-            </table>
+            <div class="card">
+                <div class="card-header">
+                    Current Train Schedule
+                </div>
+                <div class="card-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequency</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                            <!-- <tr>
+                                <td id="displayName"></td>
+                                <td id="displayDestination"></td>
+                                <td id="displayFrequency"></td>
+                                <td id="displayArrival"></td>
+                                <td id="displayMinutes"></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <!-- User Input Form -->
     <div class="row">
         <div class="col-md-12">
-                <form>
-                    <span>Train Name</span><br />
-                    <input type="text" id="input-name" placeholder=""><br />
-                    <span>Destination</span><br />
-                    <input type="text" id="input-destination" placeholder=""><br />
-                    <span>First Train Time</span><br />
-                    <input type="text" id="input-time" placeholder=""><br />
-                    <span>Frequency (min)</span><br />
-                    <input type="text" id="input-frequency" placeholder=""><br />
-                    <input type="button" id="click-button" value="Submit"><br />
-                </form>
+            <div class="card">
+                <div class="card-header">
+                    New Member Sign-Up
+                </div>
+                <div class="card-body">
+                    <form>
+                        <span>Train Name</span><br />
+                        <input type="text" id="input-name" placeholder=""><br />
+                        <span>Destination</span><br />
+                        <input type="text" id="input-destination" placeholder=""><br />
+                        <span>First Train Time</span><br />
+                        <input type="text" id="input-time" placeholder=""><br />
+                        <span>Frequency (min)</span><br />
+                        <input type="text" id="input-frequency" placeholder=""><br />
+                        <input type="button" id="click-button" value="Submit"><br />
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
