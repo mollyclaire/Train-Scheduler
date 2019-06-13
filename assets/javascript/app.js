@@ -21,12 +21,12 @@ var time = "";
 var frequency = "";
 
 
-// Click Button changes what is stored in Firebase
+// When user hits submit...
 $("#click-button").on("click", function(event) {
     // Prevent the page from refreshing
     event.preventDefault();
 
-    // Get inputs
+    // Receives user inputs
     name = $("#input-name").val().trim();
     console.log(name);
     destination = $("#input-destination").val().trim();
@@ -41,58 +41,59 @@ $("#click-button").on("click", function(event) {
         frequency: frequency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
-    });
+
+    // Clear the input fields
+    $("#input-name").val("");
+    $("#input-destination").val("");
+    $("#input-time").val("");
+    $("#input-frequency").val("");
+
+});
 
 // Listens for changes that have been made in Firebase and adds the data to the server...
 database.ref().on("child_added", function(childSnapshot) {
+    // Console test
     console.log(childSnapshot.val().name);
     console.log(childSnapshot.val().destination);
     console.log(childSnapshot.val().time);
     console.log(childSnapshot.val().frequency);
 
+    // New variables for the snapshots of each child
     var newName = childSnapshot.val().name;
     var newDest = childSnapshot.val().destination;
-    var newTime = childSnapshot.val().time; // use moment here to convert
-    var newFreq = childSnapshot.val().frequency; // use moment here to convert 
+    var newTime = childSnapshot.val().time; 
+    var newFreq = childSnapshot.val().frequency; 
 
-
-
-    // Assumptions
-    // var newFreq = 3;
-
-    // First Time (pushed back 1 year to make sure it comes before current time)
+    // User input "newTime" is converted (pushed back 1 year to make sure it comes before current time)
     var firstTimeConverted = moment(newTime, "HH:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
 
     // Current Time
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
-
+    
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
 
     // Time apart (remainder)
     var remainder = diffTime % newFreq;
-    console.log(remainder);
 
     // Minutes Until Train
     var minutesAway = newFreq - remainder;
-    console.log("MINUTES TILL TRAIN: " + minutesAway);
-
+    
     // Next Train
     var nextTrain = moment().add(minutesAway, "minutes");
+    var convertedNextTrain = moment(nextTrain).format("HH:mm");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
-       // A new row is created, and the new data is displayed on the page
-       var newRow = $("<tr>");
-       newRow.append(
-           $("<td>").text(newName),
-           $("<td>").text(newDest),
-           $("<td>").text(newFreq + " min"),
-           $("<td>").text(nextTrain),
-           $("<td>").text(minutesAway + "min")
-       )
-       $("#table").append(newRow);
+    // A new row is created, and the new data is displayed on the page
+    var newRow = $("<tr>");
+    newRow.append(
+        $("<td>").text(newName),
+        $("<td>").text(newDest),
+        $("<td>").text(newFreq + " min"),
+        $("<td>").text(convertedNextTrain),
+        $("<td>").text(minutesAway + "min")
+    )
+    $("#table").append(newRow);
 
 })
+
