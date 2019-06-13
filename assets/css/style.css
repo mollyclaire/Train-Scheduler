@@ -6,6 +6,19 @@ form input, button{
     padding: 5px;
 }
 
+input {
+    width: 100%;
+}
+
+#click-button {
+    width: 25%;
+    margin-top: 20px;
+}
+
+label {
+    margin: 6px 3px;
+}
+
 table{
     width: 100%;
     margin-bottom: 20px;
@@ -24,14 +37,6 @@ table th, table td{
 table th {
     text-align: center;
     font-weight: normal;
-}
-
-input {
-    width: 100%;
-}
-
-#click-button {
-    width: 25%;
 }
 
 .card {
